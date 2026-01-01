@@ -15,6 +15,9 @@ const userRouter = require('./routes/user.router');
 require('dotenv').config();
 
 const app = express();
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
 app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
