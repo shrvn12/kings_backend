@@ -33,10 +33,6 @@ const io = new Server(server, {
 // Store connected users: { username: socket.id }
 const users = {};
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
-
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
 app.use('/message', messageRouter);
